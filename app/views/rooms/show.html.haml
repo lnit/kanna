@@ -1,11 +1,15 @@
 %p#notice= notice
 
-%p
-  %b Name:
-  = @room.name
-%p
-  %b Body:
-  = @room.body
+%div{'ng-controller' => 'RoomsController'}
+  %dl.room
+    %dt
+      Name
+    %dd
+      {{room.name}}
+    %dt
+      Body
+    %dd
+      {{room.body}}
 
 = link_to 'Edit', edit_room_path(@room)
 \|
