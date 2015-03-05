@@ -4,7 +4,6 @@
   %thead
     %tr
       %th Name
-      %th Body
       %th
       %th
       %th
@@ -13,7 +12,6 @@
     - @rooms.each do |room|
       %tr
         %td= room.name
-        %td= room.body
         %td= link_to 'Show', room
         %td= link_to 'Edit', edit_room_path(room)
         %td= link_to 'Destroy', room, :method => :delete, :data => { :confirm => 'Are you sure?' }
