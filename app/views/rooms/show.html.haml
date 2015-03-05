@@ -5,11 +5,11 @@
     %dt
       Name
     %dd
-      {{room.name}}
+      = text_field_tag 'room[name]', "{{room.name}}"
     %dt
       Body
     %dd
-      {{room.body}}
+      = text_area_tag 'room[body]', '{{room.body}}', cols: 60, rows: 20
 
 = link_to 'Edit', edit_room_path(@room)
 \|
