@@ -6,3 +6,6 @@ App.controller 'RoomsController', ($scope, $interval, Room) ->
       $scope.room = new_room
 
   $interval reloadRoom, 3 * 1000
+
+  $scope.update = ->
+    Room.update($scope.room)
