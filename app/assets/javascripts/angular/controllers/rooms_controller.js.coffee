@@ -3,7 +3,8 @@ App.controller 'RoomsController', ($scope, $interval, Room) ->
 
   reloadRoom = ->
     Room.get id: location.pathname.split("/").pop(), (new_room) ->
-      $scope.room = new_room
+      if $scope.room.updated_at_count < new_room.updated_at_count
+        $scope.room = new_room
 
   $interval reloadRoom, 3 * 1000
 
