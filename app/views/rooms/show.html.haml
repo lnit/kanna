@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%div{'ng-controller' => 'RoomsController'}
+  %form{'ng-submit' => 'update()'}
+    %dl.room
+      %dt
+        Name
+      %dd
+        = text_field_tag 'room[name]', '', 'ng-model' => 'room.name'
+      %dt
+        Body
+      %dd
+        = text_area_tag 'room[body]', '', cols: 60, rows: 20, 'ng-model' => 'room.body'
+    = submit_tag 'save'
+%p
+  = link_to 'Edit', edit_room_path(@room)
+  \|
+  = link_to 'Back', rooms_path
