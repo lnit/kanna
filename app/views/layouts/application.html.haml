@@ -7,8 +7,5 @@
     = javascript_include_tag 'application'
     = csrf_meta_tags
   %body
-    - if user_signed_in?
-      %nav
-        = link_to "ログアウト", destroy_user_session_path, method: :delete
-        
+    = render 'shared/navber'
     = yield
