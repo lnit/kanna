@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: kanna_production
-  username: kanna
+  database: lnilabo_kanna
+  username: lnilabo_kanna
   password: <%= ENV['KANNA_DATABASE_PASSWORD'] %>
