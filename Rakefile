@@ -10,7 +10,7 @@ namespace :unicorn do
   desc "Start unicorn"
   task(:start) {
     config = rails_root + "config/unicorn.rb"
-    sh "bundle exec unicorn_rails -c #{config} -E production -D"
+    sh "bundle exec unicorn_rails -c #{config} -E production -D --path /app/kanna"
   }
 
   desc "Stop unicorn"
