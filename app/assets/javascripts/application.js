@@ -14,5 +14,6 @@
 //= require jquery_ujs
 //= require angular
 //= require angular-resource
+//= require kanna_config
 //= require kanna_angular
 //= require_tree .
