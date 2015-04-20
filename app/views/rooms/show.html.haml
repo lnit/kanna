@@ -1,18 +1,18 @@
-%p#notice= notice
+- model_class = Room
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.titleize
 
 %div{'ng-controller' => 'RoomsController'}
-  %form{'ng-submit' => 'update()'}
-    %dl.room
-      %dt
-        Name
-      %dd
-        = text_field_tag 'room[name]', '', 'ng-model' => 'room.name'
-      %dt
-        Body
-      %dd
-        = text_area_tag 'room[body]', '', cols: 60, rows: 20, 'ng-model' => 'room.body'
-    = submit_tag 'save'
-%p
-  = link_to 'Edit', edit_room_path(@room)
-  \|
-  = link_to 'Back', rooms_path
+  %form.room{'ng-submit' => 'update()'}
+    .form-group
+      %label.control-label Name
+      .controls
+        = text_field_tag 'room[name]', '', 'ng-model' => 'room.name', :class => 'form-control'
+    .form-group
+      %label.control-label Body
+      .controls
+        = text_area_tag 'room[body]', '', rows: 20, 'ng-model' => 'room.body', :class => 'form-control'
+    = submit_tag 'save', class: 'btn btn-primary'
+    = link_to t('.back', :default => t("helpers.links.back")), rooms_path, :class => 'btn btn-default'
+    = link_to t('.edit', :default => t("helpers.links.edit")), edit_room_path(@room), :class => 'btn btn-default'
+    = link_to t('.destroy', :default => t("helpers.links.destroy")), room_path(@room), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'
