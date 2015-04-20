@@ -15,7 +15,6 @@ default: &default
   pool: 5
   username: root
   password:
-  socket: /tmp/mysql.sock
 
 development:
   <<: *default
@@ -49,6 +48,6 @@ test:
 #
 production:
   <<: *default
-  database: kanna_production
-  username: kanna
+  database: lnilabo_kanna
+  username: lnilabo_kanna
   password: <%= ENV['KANNA_DATABASE_PASSWORD'] %>
