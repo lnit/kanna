@@ -21,6 +21,9 @@ gem 'devise'
 gem 'rails-assets-angular'
 gem 'rails-assets-angular-resource'
 
+gem 'less-rails'
+gem 'twitter-bootstrap-rails'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
