@@ -16,3 +16,8 @@
     = error_span(@room[:user_id])
   = f.submit nil,class: 'btn btn-primary'
   = link_to t('.cancel', :default => t("helpers.links.cancel")), rooms_path, :class => 'btn btn-default'
+
+- content_for :sidebar do
+  %h3 Control
+  %ul.nav.nav-list
+    %li= link_to t('.new', :default => t("helpers.links.new")), new_room_path
