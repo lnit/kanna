@@ -1,16 +1,23 @@
-= form_for @room do |f|
-  - if @room.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@room.errors.count, "error")} prohibited this room from being saved:"
-      %ul
-        - @room.errors.full_messages.each do |msg|
-          %li= msg
+= form_for @room, html: { class: "form form-horizontal room" } do |f|
+  .form-group
+    = f.label :name, class: 'control-label'
+    .controls
+      = f.text_field :name, class: 'form-control', required: true
+    = error_span(@room[:name])
+  .form-group
+    = f.label :body, class: 'control-label'
+    .controls
+      = f.text_field :body, class: 'form-control', required: true
+    = error_span(@room[:body])
+  .form-group
+    = f.label :user_id, class: 'control-label'
+    .controls
+      = f.text_field :user_id, class: 'form-control', required: true
+    = error_span(@room[:user_id])
+  = f.submit nil,class: 'btn btn-primary'
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), rooms_path, :class => 'btn btn-default'
 
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :body
-    = f.text_area :body, cols: 60, rows: 20
-  .actions
-    = f.submit 'Save'
+- content_for :sidebar do
+  %h3 Control
+  %ul.nav.nav-list
+    %li= link_to t('.new', :default => t("helpers.links.new")), new_room_path
