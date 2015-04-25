@@ -6,8 +6,6 @@
     %tr
       %th= model_class.human_attribute_name(:id)
       %th= model_class.human_attribute_name(:name)
-      %th= model_class.human_attribute_name(:body)
-      %th= model_class.human_attribute_name(:user_id)
       %th= model_class.human_attribute_name(:created_at)
       %th=t '.actions', :default => t("helpers.actions")
   %tbody
@@ -15,8 +13,6 @@
       %tr
         %td= link_to room.id, room_path(room)
         %td= room.name
-        %td= room.body
-        %td= room.user_id
         %td=l room.created_at
         %td
           = link_to t('.show', :default => t("helpers.links.show")), room_path(room), :class => 'btn btn-default btn-xs'
