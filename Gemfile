@@ -20,6 +20,7 @@ gem 'devise'
 
 gem 'rails-assets-angular'
 gem 'rails-assets-angular-resource'
+gem 'rails-assets-angular-ui-bootstrap-bower'
 
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
