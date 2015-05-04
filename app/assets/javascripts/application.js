@@ -15,6 +15,7 @@
 //= require twitter/bootstrap
 //= require angular
 //= require angular-resource
+//= require angular-ui-bootstrap-bower
 //= require kanna_config
 //= require kanna_angular
 //= require_tree .

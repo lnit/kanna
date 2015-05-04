@@ -1,4 +1,4 @@
-window.App = angular.module('Kanna', ['ngResource', 'Kanna.conf'])
+window.App = angular.module('Kanna', ['ngResource', 'ui.bootstrap', 'Kanna.conf'])
 
 # Ajax送信時にトークンを送信する（トークンがないとRails側で認証エラーになる）
 App.config ($httpProvider) ->
