@@ -3,6 +3,8 @@
   %h1=t '.title', :default => model_class.model_name.human.titleize
 
 %div{'ng-controller' => 'RoomsController'}
+  %alert{'ng-repeat' => 'error in room.errors', :type => 'danger'}
+    {{error}}
   %form.room{'ng-submit' => 'update()'}
     .form-group
       %label.control-label Name
