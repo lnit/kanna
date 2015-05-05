@@ -3,6 +3,8 @@
   %h1=t '.title', :default => model_class.model_name.human.titleize
 
 %div{'ng-controller' => 'RoomsController'}
+  %alert{'ng-repeat' => 'error in room.errors', :type => 'danger'}
+    {{error}}
   %form.room{'ng-submit' => 'update()'}
     .form-group
       %label.control-label Name
@@ -11,7 +13,7 @@
     .form-group
       %label.control-label Body
       .controls
-        = text_area_tag 'room[body]', '', rows: 20, 'ng-model' => 'room.body', :class => 'form-control'
+        = text_area_tag 'room[body]', '', rows: 15, 'ng-model' => 'room.body', :class => 'form-control'
     = submit_tag 'save', class: 'btn btn-primary'
     = link_to t('.back', :default => t("helpers.links.back")), rooms_path, :class => 'btn btn-default'
 
