@@ -19,16 +19,26 @@ require 'rails_helper'
 # that an instance is receiving a specific message.
 
 RSpec.describe RoomsController, type: :controller do
+  let(:user) { User.create(email:"hoge@test.fuga",password:"aaaaaaaa")}
+  before { sign_in :user, user }
 
   # This should return the minimal set of attributes required to create a valid
   # Room. As you add validations to Room, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    {
+      name: "valid",
+      body: "",
+      user: user
+    }
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    {
+      name: "",
+      body: "",
+      user: user
+    }
   }
 
   # This should return the minimal set of values that should be in the session
@@ -103,7 +113,10 @@ RSpec.describe RoomsController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        {
+          name: "new",
+          body: "new"
+        }
       }
 
       it "updates the requested room" do
